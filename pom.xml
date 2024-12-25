@@ -42,10 +42,27 @@
 		<dependency>
 		    <groupId>org.jacoco</groupId>
 		    <artifactId>jacoco-maven-plugin</artifactId>
-		    <version>0.8.12</version>
-		</dependency>
+		    <version>3.3.7</version>
+		<executions>
+                <execution>
+                    <!-- This goal prepares the JaCoCo agent to collect coverage data -->
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                    <phase>initialize</phase> <!-- Runs the agent during the initialize phase -->
+                </execution>
+                <execution>
+                    <!-- This goal generates the coverage report -->
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                    <phase>prepare-package</phase> <!-- Runs after the tests are completed -->
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
