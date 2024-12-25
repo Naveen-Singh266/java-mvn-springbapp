@@ -57,25 +57,22 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<plugin>
-  <groupId>org.jacoco</groupId>
-  <artifactId>jacoco-maven-plugin</artifactId>
-  <version>0.8.8</version> <!-- use the latest version -->
-  <executions>
-    <execution>
-      <goals>
-        <goal>prepare-agent</goal>
-      </goals>
-    </execution>
-    <execution>
-      <goals>
-        <goal>report</goal>
-      </goals>
-      <phase>verify</phase>
-    </execution>
-  </executions>
-</plugin>
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.7</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 	<build>
 		<plugins>
 			<plugin>
